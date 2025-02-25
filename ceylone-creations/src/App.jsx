@@ -1,30 +1,22 @@
-import { useEffect,useState } from 'react';
+//import { useEffect, useState } from 'react';
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Navbar from './components/Navbar/navbar';
 
 function App() {
-
-  const [Buyers, setBuyers] = useState([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch('http://localhost:3000');
-      const data = await res.json();
-      setBuyers(data.Buyer);
-    };
-    fetchData();
-  }, []);
-
   return (
-    <>
-    <h1>Buyers</h1>
-    {Buyers.map(i => (
-      <div key={i._id}>
-        <p>{i.name}</p>
-        <p>{i.email}</p>
-        <p>{i.phone}</p>
-        <p>{i.address}</p>
+    <div className="App">
+      <BrowserRouter>
+      <Navbar/>
+      <div className="white-gradient">
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
       </div>
-    ))}
-    </>
+    </BrowserRouter>
+    
+    </div>
   );
 }
 
