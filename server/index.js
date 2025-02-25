@@ -1,4 +1,4 @@
-//mongodb+srv://root:<db_password>@cluster0.nleyw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+//mongodb+srv://atlas-sample-dataset-load-67bd601aa245aa28dec407bd:<db_password>@cluster0.7qgvr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 
 const express = require('express');
 const connectDB = require('./db');
@@ -18,5 +18,5 @@ app.get('/', async (req, res) => {
 
 
 app.listen(3000, () => {
-    console.log('Server is running on port 3000');
+    console.log('Server is running on port 3001');
 });
