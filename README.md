@@ -3,4 +3,6 @@ A platform for buying and selling handmade items, connecting artisans with custo
 
 
 ![image alt](https://raw.githubusercontent.com/NIBM-GALLE/GAHDSE241F-ceylone-creations/bcc15b2a47e283588ba18149010cfbe75cae4a59/2.png)
+![image alt](https://raw.githubusercontent.com/NIBM-GALLE/GAHDSE241F-ceylone-creations/f51c216464c681f72ee584acb20dd63221fa5c05/Screenshot%202025-03-22%20122318.png)
+
 
