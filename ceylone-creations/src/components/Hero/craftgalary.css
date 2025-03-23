@@ -1,0 +1,82 @@
+/* craftgalary.css */
+
+.gallery-container {
+    background-color: #7a3a1e;
+    text-align: center;
+    padding: 55px 10px; 
+    color: white;
+    
+  }
+  
+  .gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    margin-bottom: 50px;   
+  }
+  
+  .gallery-subtitle {
+    font-size: 14px;
+  }
+  
+  .gallery-title {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: left!important;
+  }
+  
+  .see-all {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  
+  .gallery-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .left-column,
+  .right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .center-column {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .gallery-item {
+    width: 135px;
+    height: 135px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .gallery-item.large {
+    width: 350px;
+    height: 300px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .gallery-grid {
+      flex-direction: column;
+    }
+    .gallery-item {
+      width: 90px;
+      height: 90px;
+    }
+    .gallery-item.large {
+      width: 180px;
+      height: 180px;
+    }
+  }
+  

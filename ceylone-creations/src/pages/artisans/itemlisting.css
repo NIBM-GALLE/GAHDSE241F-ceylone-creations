@@ -1,0 +1,141 @@
+ 
+  .form-container {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    
+  }
+  .form-logo {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .form-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+    color: #f5a623; /* Accent color */
+    margin-right: 370px;
+    font-family: 'Poppins', sans-serif;  
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  .form-group label {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: #b3b3b3;
+    margin-right: 591px;
+    font-family: 'Poppins', sans-serif;  
+  }
+  .category-select {
+    padding: 7px;
+    border-radius: 12px;
+    border: 2px solid #ccc;
+    color: #888;
+    width: 80%;
+    background-color: #fcfcfc;
+    font-family: "Poppins", sans-serif; /* Change font */
+    font-size: 16px;
+  }
+  /* Ensure dropdown opens downward */
+.category-select:focus {
+  z-index: 1000; /* Ensures dropdown appears above other elements */
+}
+
+/* Style dropdown options */
+.category-select option {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  background: white;
+  color: black;
+  padding: 10px;  
+}
+
+/* Fix dropdown positioning in some browsers */
+.category-select::-webkit-select-dropdown {
+  position: absolute;
+  top: 100%; /* Push dropdown below */
+  left: 0;
+  width: 100%;
+}
+.category-select option:hover {
+  background-color: #f39c12; /* Change background on hover */
+  color: white; /* Change text color on hover */
+} 
+  .form-group input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    background-color: #fcfcfc;
+    color: rgb(20, 19, 19);
+  }
+  
+  .form-group input::placeholder {
+    color: #888;
+  }
+  
+  .submit-button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f5a623;
+    color: white;
+    font-size: 1rem;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 82%;
+  }
+  
+  .submit-button:hover {
+    background-color: #d4891c;
+  }
+  .form-group textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    resize: vertical; /* Allow vertical resizing only */
+    font-family: inherit; /* Match the font with the rest of the form */
+    font-size: 0.9rem;
+    width: 78%;
+    font-family: 'Poppins', sans-serif;  
+    color: rgb(20, 19, 19);
+  }
+  
+  .form-group textarea::placeholder {
+    color: #888;
+  }
+  
+  /* Styling the File Input */
+  .form-group input[type="file"] {
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    background-color: #fcfcfc;
+    width: 82%;
+    cursor: pointer;
+  }
+  
+  .form-group input[type="file"]::-webkit-file-upload-button {
+    padding: 5px 10px;
+    background-color: #f5a623;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    transition: background 0.3s ease;
+  }
+  
+  .form-group input[type="file"]::-webkit-file-upload-button:hover {
+    background-color: #d4891c;
+  }

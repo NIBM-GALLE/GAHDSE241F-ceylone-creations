@@ -1,0 +1,74 @@
+
+body {
+
+    background-color: #fdf7f1;  
+  }
+.material-slider {
+    margin-top: 15px;
+    background: #fdf7f1;
+    padding: 20px;
+    max-width: 180%;
+    overflow: hidden; /* Prevents overflow issues */
+}
+
+/* Material Item */
+.material-item {
+    text-align: center;
+    padding: 10px;
+   
+}
+.material-item img {
+    width: 95%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+    
+    
+}
+.material-item img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+.material-item p {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .material-slider {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .material-slider {
+        padding: 10px;
+    }
+
+    .material-item img {
+        max-height: 180px;
+    }
+
+    .material-item p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .material-slider {
+        padding: 5px;
+    }
+
+    .material-item {
+        padding: 5px;
+    }
+
+    .material-item img {
+        max-height: 150px;
+    }
+
+    .material-item p {
+        font-size: 12px;
+    }
+}

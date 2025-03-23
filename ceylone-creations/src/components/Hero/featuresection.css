@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+body {
+
+  background-color: #fdf7f1;  
+}
+.feature-section {
+  background-color: #fdf7f1;
+  padding: 40px 5%;
+  margin-top: -20px;
+}
+
+/* Responsive Flexbox for Benefits */
+.benefits {
+  display: flex;
+  flex-wrap: wrap; /* Wraps elements on smaller screens */
+  justify-content: center;
+  background-color: #8b4513;
+  padding: 15px;
+  border-radius: 30px;
+  margin-bottom: 30px;
+  gap: 50px;
+}
+
+.benefit {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 1rem;
+}
+
+.icon {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+/* Responsive Layout for Feature Content */
+.feature-content {
+  display: flex;
+  flex-wrap: wrap; /* Allows stacking on smaller screens */
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 40px;
+  border-radius: 10px;
+}
+
+/* Image Responsiveness */
+.feature-image img {
+  width: 150%;
+  max-width: 590px;
+  border-radius: 10px;
+}
+
+/* Text Responsiveness */
+
+.feature-text {
+  max-width: 500px;
+}
+
+.feature-text h5 {
+  color: #8b4513;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  margin-left: -150px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.feature-text h2 {
+  font-size: -2rem;
+  margin-bottom: 15px;
+  font-family: 'Poppins', sans-serif;
+  text-align: left;
+  margin-left: -150px;
+}
+
+.feature-text p {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+  margin-left: -150px;
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .feature-content {
+    flex-direction: column; /* Stack items */
+    text-align: center;
+    gap: 20px;
+  }
+
+  .feature-text {
+    max-width: 90%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .benefits {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .feature-image img {
+    max-width: 90%;
+  }
+
+  .feature-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .feature-text p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .feature-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .feature-text p {
+    font-size: 0.9rem;
+  }
+}

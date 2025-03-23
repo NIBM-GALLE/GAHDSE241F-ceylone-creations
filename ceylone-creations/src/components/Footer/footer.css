@@ -1,0 +1,110 @@
+.footer {
+    background-color: #5f7161; /* Adjusted to match the image */
+    color: #ffffff;
+    padding: 2rem;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  
+  .footer-section {
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .footer-heading {
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-size: 100%;
+  }
+  .footer-heading2 {
+    font-weight: bold;
+    margin-top: 1%;
+    margin-bottom: 1rem;
+    font-size: 100%;
+  }
+  
+  .footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.9rem;
+  }
+  
+  .footer-list li {
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .footer-images {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+    width: 10px!important;
+  }
+  
+  .footer-img {
+    width: 120px;
+  }
+  
+  .footer-icons {
+    display: flex;
+    gap: 1rem;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  .footer-text {
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .footer-input {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .input-field {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: none;
+    font-size: 1rem;
+  }
+  
+  .subscribe-button {
+    background-color: #a0522d; /* Matching the button color in the image */
+    color: white;
+    padding: 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .subscribe-button:hover {
+    background-color: #8b4513;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #e0e0e0;
+    margin-top: 2rem;
+  }
+  
+  .footer-link {
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .app-image {
+    width: 100px; /* Adjust as needed */
+    height: 150px; /* Maintain aspect ratio */
+  }
+  
