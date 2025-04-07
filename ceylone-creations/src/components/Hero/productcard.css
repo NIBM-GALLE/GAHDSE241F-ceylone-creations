@@ -1,30 +1,45 @@
-.product-card {
+/* Container for Product Cards */
+.product-card-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping if there are more than 5 cards */
+    justify-content: space-between; /* Adds space between cards */
+    gap: 20px; /* Adds spacing between cards */
+    margin: 20px auto; /* Centers the container */
+    max-width: 1200px; /* Optional: Set a max width for the container */
+  }
+  
+  /* Individual Product Card */
+  .product-card {
     background: #fdf7f1;
     border-radius: 10px;
-    padding: 15px;
+    padding: 10px;
     text-align: center;
-    /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease; */
     position: relative;
-}
-
-.product-card:hover {
+    gap: 10px;
+    margin: 10px;
+    flex: 1 1 calc(20% - 20px); /* Each card takes 20% of the row width minus the gap */
+    box-sizing: border-box; /* Ensures padding and border are included in the width */
+  }
+  
+  .product-card:hover {
     transform: scale(1.05);
-}
-
-.image-container {
+  }
+  
+  /* Image Container */
+  .image-container {
     position: relative;
     width: 100%;
-}
-
-.product-image {
+  }
+  
+  .product-image {
     width: 100%;
-    height: 180px;
+    height: 175px;
     border-radius: 10px;
     object-fit: cover;
-}
-
-.favorite-btn {
+  }
+  
+  /* Favorite Button */
+  .favorite-btn {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -33,27 +48,28 @@
     font-size: 25px;
     cursor: pointer;
     color: #333;
-}
-.favorite-btn:hover {
+  }
+  
+  .favorite-btn:hover {
     color: #660202;
-    
-}
-
-.product-category {
+  }
+  
+  /* Product Details */
+  .product-category {
     font-size: 12px;
     color: #a67c52;
     text-transform: uppercase;
     margin-top: 10px;
-}
-
-.product-title {
+  }
+  
+  .product-title {
     font-size: 16px;
     color: #333;
     margin: 10px 0;
-}
-
-.product-price {
+  }
+  
+  .product-price {
     font-size: 18px;
     font-weight: bold;
     color: #d77a22;
-}
+  }

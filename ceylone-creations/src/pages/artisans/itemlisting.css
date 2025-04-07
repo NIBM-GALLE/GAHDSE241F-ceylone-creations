@@ -1,11 +1,34 @@
  
+  .page-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 55px;
+    margin-right: 380px;
+    margin-bottom: 20px; /* Adds spacing between heading and form */
+    color: #333;
+}
+.create-product-description{
+  margin-right: 350px;
+}
   .form-container {
-    max-width: 700px;
-    margin: 50px auto;
+    width: 55%;
+    margin: 50px auto; /* Centers the form horizontally */
     padding: 20px;
     border-radius: 10px;
-    
-  }
+    background-color: #ffffff; /* Adds a white background */
+    margin-right: auto; /* Ensures it stays centered */
+    margin-left: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .form-container {
+        max-width: 90%; /* Adjust width for smaller screens */
+        padding: 15px;
+    }
+}
+
   .form-logo {
     text-align: center;
     margin-bottom: 20px;
@@ -13,10 +36,10 @@
   
   .form-title {
     text-align: center;
-    font-size: 1.8rem;
-    margin-bottom: 40px;
-    color: #f5a623; /* Accent color */
-    margin-right: 370px;
+    font-size: 16px;
+     margin-bottom: 50px;
+    color: #0e0d0d; /* Accent color */
+   text-align: left;
     font-family: 'Poppins', sans-serif;  
   }
   
@@ -28,14 +51,24 @@
   .form-group {
     display: flex;
     flex-direction: column;
+    margin-bottom: 20px;
   }
   .form-group label {
     margin-bottom: 5px;
     font-size: 0.9rem;
-    color: #b3b3b3;
-    margin-right: 591px;
+    color: #161616;
+    text-align: left;
     font-family: 'Poppins', sans-serif;  
+    font-weight: bold;
   }
+  .form-helper {
+    display: block;
+    font-size: 0.85rem;
+    color: #888;
+    margin: 4px 0 8px 0;
+    text-align: left;
+  }
+
   .category-select {
     padding: 7px;
     border-radius: 12px;
@@ -93,7 +126,7 @@
     margin-top: 20px;
     cursor: pointer;
     transition: background 0.3s ease;
-    width: 82%;
+    width: 100%;
   }
   
   .submit-button:hover {
@@ -106,7 +139,6 @@
     resize: vertical; /* Allow vertical resizing only */
     font-family: inherit; /* Match the font with the rest of the form */
     font-size: 0.9rem;
-    width: 78%;
     font-family: 'Poppins', sans-serif;  
     color: rgb(20, 19, 19);
   }
@@ -116,26 +148,501 @@
   }
   
   /* Styling the File Input */
-  .form-group input[type="file"] {
-    padding: 5px;
+  .file[type="file"] {
+    padding: 10px;
     border-radius: 5px;
     border: 2px solid #ccc;
     background-color: #fcfcfc;
-    width: 82%;
+    width: 90%;
     cursor: pointer;
   }
-  
-  .form-group input[type="file"]::-webkit-file-upload-button {
+  .file input[type="file"]::-webkit-file-upload-button {
     padding: 5px 10px;
     background-color: #f5a623;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-
     transition: background 0.3s ease;
   }
   
-  .form-group input[type="file"]::-webkit-file-upload-button:hover {
+  .file input[type="file"]::-webkit-file-upload-button:hover {
     background-color: #d4891c;
   }
+
+  
+/* General Styling */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.variation-title {
+  font-size: 16px!important;
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-align: left;
+}
+.variation-title-two{
+  font-size: 14px;
+  margin-top: -10px;
+  text-align: left;
+  color: #555;
+}
+
+.variation-description {
+  font-size: 14px;
+  color: #555;
+  margin-top: -10px;
+  margin-right: 375px;
+}
+
+/* Container for Color Inputs */
+.color-inputs-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  background-color: #fcfcfc;
+  color: rgb(20, 19, 19);
+  width: 56%;
+  margin-left: 21%;
+  margin-top: -35px !important;
+  
+}
+
+/* Individual Color Input Card */
+.color-input-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  margin-bottom: 10px; 
+}
+
+.color-inputs-container {
+  background-color: #ffffff;
+  padding: 16px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.variation-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-family: 'Poppins', sans-serif; 
+}
+
+.variation-description {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 15px;
+  margin-left: 5px;
+}
+
+.manage-variations-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.manage-variations-btn {
+  background-color: white;
+  color: #333;
+  border: 1px solid #333;
+  border-radius: 20px;
+  padding: 5px 5px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  height: 35px;
+  margin-left: 720px;
+  margin-top: -10%;
+}
+
+.manage-variations-btn:hover {
+  background-color: #f5f5f5;
+  border-color: #555;
+}
+ 
+
+.color-input-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.color-input-card input[type="color"] {
+  width: 40px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+}
+
+.color-input-card input[type="file"] {
+  flex: 1;
+}
+
+.color-input-card button {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.color-input-card button:hover {
+  background: #b52a37;
+}
+
+button[type="button"] {
+  display: block;
+  background: #181b19;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+button[type="button"]:hover {
+  background: #e7ba25;
+}
+
+
+/*shippin conatiner*/
+
+
+/* Container Styling */
+.shipping-container {
+    width: 55%;
+    margin: 50px auto; /* Centers the form horizontally */
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffffff; /* Adds a white background */
+    margin-right: auto; /* Ensures it stays centered */
+    margin-left: auto;
+    margin-top: 1%;
+}
+
+/* Section Titles */
+.shipping-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  text-align: left;
+}
+
+.shipping-description {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+/* Shipping Box */
+.shipping-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+/* Shipping Details */
+.shipping-option {
+  font-weight: 600;
+}
+
+.fixed-badge {
+  background: #c9cccf;
+  color: white;
+  padding: 2px 6px;
+  font-size: 12px;
+  border-radius: 10px;
+  margin-left: 8px;
+}
+
+.shipping-info {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Edit Button */
+.edit-btn-shipping {
+  background: #5b6d81;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.edit-btn:hover {
+  background: #0056b3;
+}
+
+/* Preview Button */
+.preview-btn {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: #f1f1f1;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.preview-btn:hover {
+  background: #ddd;
+}
+
+/* Shipping Preview */
+.shipping-preview {
+  margin-top: 10px;
+  padding: 15px;
+  background: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.preview-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.preview-subtitle {
+  font-size: 13px;
+  color: #666;
+}
+
+.preview-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+/* Shipping Cost Details */
+.shipping-price {
+  text-align: right;
+}
+
+.shipping-price .label {
+  font-size: 13px;
+  color: #666;
+}
+
+.price-value {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.total-price {
+  font-size: 16px;
+  font-weight: 700;
+  color: #333;
+}
+
+/* Shipping Form Overlay */
+.shipping-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+
+/* Shipping Form */
+.shipping-form {
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 90%; /* Adjust width for small screens */
+  max-width: 400px;
+  max-height: 90vh; /* Prevents the form from being too tall */
+  overflow-y: auto; /* Enables scrolling if needed */
+  z-index: 20;
+}
+
+.shipping-title {
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 12px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Min-Max Input Styling */
+.input-range {
+  display: flex;
+  align-items: center;
+}
+
+.input-range input {
+  width: 45%;
+}
+
+.input-range span {
+  margin: 0 5px;
+}
+
+/* Form Buttons */
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.save-btn {
+  background: #28a745;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.save-btn:hover {
+  background: #218838;
+}
+
+.close-btn {
+  background: #dc3545;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close-btn:hover {
+  background: #c82333;
+}
+
+
+
+
+.renewal-container {
+  width: 55%;
+  margin: 50px auto; /* Centers the form horizontally */
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #ffffff; /* Adds a white background */
+  margin-right: auto; /* Ensures it stays centered */
+  margin-left: auto;
+  margin-top: -3%;
+}
+
+.renewal-title {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+}
+
+.renewal-title span {
+  color: red;
+}
+.automatic {
+  font-size: 16px;
+  color: #333;
+  margin-left: -300px;
+}
+
+.automatic + p {
+  font-size: 14px;
+  color: #666;
+  margin-top: 2px;
+}
+.manual
+{
+  font-size: 16px;
+  color: #333;
+  margin-left: -65px;
+}
+.manual+p
+{
+  font-size: 16px;
+  color: #333;
+  margin-top: 2px;
+ 
+}
+
+.renewal-desc {
+  font-size: 14px;
+  color: #666;
+  text-align: left;
+}
+
+.renewal-link {
+  color: #0073e6;
+  text-decoration: underline;
+}
+
+.renewal-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  cursor: pointer;
+  padding: 8px 0;
+}
+
+.renewal-option input {
+  width: 16px;
+  height: 16px;
+  accent-color: #0073e6;
+}
+
+.renewal-option div {
+  font-size: 14px;
+  color: #333;
+}
+
+.renewal-option p {
+  font-size: 12px;
+  color: #666;
+}

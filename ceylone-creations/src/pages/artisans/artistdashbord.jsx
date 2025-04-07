@@ -7,6 +7,7 @@ const Artisiandashbord= () => {
         <div className="header">
             <Navbarartist />
             <Banner/>
+            
         </div>
     )
 }

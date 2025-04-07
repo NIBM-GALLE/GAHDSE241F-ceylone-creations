@@ -125,6 +125,7 @@
 }
 
 /* Profile Dropdown */
+.shop-dropdown,
 .dropdown-menu-profile {
   position: absolute;
   top: 90px;
@@ -139,11 +140,36 @@
   z-index: 1000;
 }
 
+
 .dropdown-menu-profile .profile-name {
   font-weight: bold;
   padding: 10px;
   text-align: center;
   color: #953904;
+}
+.shop-dropdown {
+  position: absolute;
+  top: 50px; /* Adjust based on your navbar height */
+  right: 0; /* Align to the right */
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.shop-dropdown .dropdown-item {
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+  display: block;
+}
+
+.shop-dropdown .dropdown-item:hover {
+  background-color: #f39c12;
 }
 
 .profile-link {

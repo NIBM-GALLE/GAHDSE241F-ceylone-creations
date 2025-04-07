@@ -1,0 +1,146 @@
+/* CSS (editproduct.css) */
+
+.edit-panel-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%; /* Full width to cover the screen */
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background */
+  display: flex;
+  justify-content: flex-end; /* Align the panel to the right */
+  z-index: 1000;
+}
+
+/* Sliding Panel */
+.edit-panel {
+  width: 400px;
+  height: 100vh;
+  background-color: #fffaf2;
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-left: 5px solid #8B4513;
+  z-index: 1001;
+  transform: translateX(0); /* Ensure it starts in the correct position */
+  transition: transform 0.3s ease-in-out; /* Smooth slide-in effect */
+}
+
+/* Hide the panel when not active */
+.edit-panel.hidden {
+  transform: translateX(100%); /* Slide out to the right */
+}
+
+/* Close Button */
+.edit-panel .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.edit-panel .close-btn:hover {
+  background-color: #b71c1c;
+}
+
+.edit-panel h2 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  text-align: center;
+  margin-left: -250px;
+}
+
+.edit-panel label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: -5px !important;
+  color: #5a5a5a;
+  width: 100%;
+  margin-right: 299px;
+}
+
+.edit-panel input, 
+.edit-panel select {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+   
+}
+.edit-panel input[type="file"] {
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+  background-color: #fcfcfc;
+  width: 100%; /* Ensure it is taking proper space */
+  cursor: pointer;
+  display: block !important; /* Force display */
+  visibility: visible !important; /* Ensure it is not hidden */
+}
+
+.edit-panel input[type="file"]::-webkit-file-upload-button {
+  padding: 5px 10px;
+  background-color: #f5a623;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.edit-panel input[type="file"]::-webkit-file-upload-button:hover {
+  background-color: #d4891c;
+}
+
+.edit-panel input:focus, 
+.edit-panel select:focus {
+  border-color: #8B4513;
+  outline: none;
+}
+
+.preview-image {
+  width: 100px;
+  height: auto;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.editbuttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.btn {
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.btn-save {
+  background-color: #8B4513;
+  color: white;
+}
+
+.btn-cancel {
+  background-color: #ccc;
+  color: black;
+}

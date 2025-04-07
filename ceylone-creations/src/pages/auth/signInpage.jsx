@@ -20,7 +20,7 @@ const SignIn= () => {
     e.preventDefault();
     setError("");
     try{
-      const response = await axios.post("http://localhost:5000/signin", formData);
+      const response = await axios.post("http://localhost:5000/api/auth/signin", formData);
       const {token,role,username}=response.data;
 
       localStorage.setItem("token",token);

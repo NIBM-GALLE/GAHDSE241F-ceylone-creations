@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import handleLogout from "../../utills/logout/logout";
 import "./navbar.css";
 
-
+import logo from "./../../assets/logos/logo.png";
 import profile from "../../assets/icons/profile.png";
 import edit from "../../assets/icons/edit.png";
 import logout from "../../assets/icons/logout.png";
@@ -47,8 +47,8 @@ export default function Navbar() {
         </div>
 
         {/* Logo */}
-        <h1 className="logo">Celone Creations</h1>
-
+        <img src={logo} alt="Logo" className="logo" />
+        
         {/* Icons */}
         <div className="nav-icons">
           <span className="currency">SRI LANKA (RUPEES Rs)</span>
@@ -87,67 +87,67 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Navigation Links */}
-      <div className={`nav-links${menuOpen ? "active" : ""}`}>
-        {[
-          { name: "HOME", path: "/" },
-          
-          {
-            name: "PRODUCTS",
-            dropdown: [
-              { name: "Handwoven Textiles & Clothing", path: "/category/textiles" },
-              { name: "Handmade Jewelry & Accessories", path: "/category/Jewelry & Accessorie" },
-              { name: "Woodcraft & Furniture", path: "/category/Woodcraft & Furniture" },
-              { name: "Pottery & Ceramics", path: "/category/Pottery & Ceramics" },
-              { name: "Traditional Sri Lankan Masks & Sculptures", path: "/category/Traditional Sri Lankan Masks & Sculptures" },
-              { name: "Hand-painted & Artistic Items", path: "/category/Hand-painted & Artistic Items" },
-              { name: "Natural & Herbal Products", path: "/category/Natural & Herbal Products" },
-              { name: "Cane, Rattan & Coconut Shell Products", path: "/category/Cane, Rattan & Coconut Shell Products" },
-              { name: "Hand-stitched & Embroidered Goods", path: "/category/Hand-stitched & Embroidered Goods" },
-              { name: "Recycled & Upcycled Crafts", path: "/category/Recycled & Upcycled Crafts" },
-              { name: "Handmade Leather Goods", path: "/category/Handmade Leather Goods" },
-              { name: "Traditional Batik & Dyed Fabrics", path: "/category/Traditional Batik & Dyed Fabrics" },
-              { name: "Eco-friendly & Sustainable Products", path: "/category/Eco-friendly & Sustainable Products" },
-              { name: "Metal & Brass Handicrafts", path: "/category/Metal & Brass Handicrafts" },
-              { name: "Bamboo & Palm Leaf Creations", path: "/category/Bamboo & Palm Leaf Creations" },
-              { name: "Hand-carved Wooden Utensils", path: "/category/Hand-carved Wooden Utensils" },
-              { name: "Paper & Stationery Crafts", path: "/category/Paper & Stationery Crafts" },
-              { name: "Cultural & Ethnic Accessories", path: "/category/Cultural & Ethnic Accessories" },
-              { name: "Custom Artwork & Illustrations", path: "/category/Custom Artwork & Illustrations" },
-              { name: "Handcrafted Home Décor Items", path: "/category/Handcrafted Home Décor Items" },
-            ],
-          },
+      <div className={`nav-links${menuOpen ? " active" : ""}`}>
+      {[
+        { name: "HOME", path: "/" },
+        {
+          name: "PRODUCTS",
+          dropdown: [
+            { name: "Handwoven Textiles & Clothing", path: "HandwovenTextilesClothing"},
+            { name: "Handmade Jewelry & Accessories", path: "HandmadeJewelryAccessories"},
+            { name: "Woodcraft & Furniture", path: "WoodcraftFurniture"},
+            { name: "Pottery & Ceramics", path: "PotteryCeramics"},
+            { name: "Traditional SriLankan Masks & Sculptures", path: "TraditionalSriLankanMasks&Sculptures" },
+            { name: "Hand-painted & Artistic Items", path: "HandpaintedArtistiItems"},
+            { name: "Natural & Herbal Products", path: "NaturalHerbalProducts"},
+            { name: "Cane, Rattan & Coconut Shell Products", path: "CaneRattanCoconutShellProducts" },
+            { name: "Hand-stitched & Embroidered Goods", path: "HandstitchedEmbroideredGoods"},
+            { name: "Recycled & Upcycled Crafts", path: "RecycledUpcycledCrafts"},
+            { name: "Handmade Leather Goods", path: "HandmadeLeatherGoods"},
+            { name: "Traditional Batik & Dyed Fabrics", path: "TraditionalBatikDyedFabrics"},
+            { name: "Eco-friendly & Sustainable Products", path: "EcofriendlySustainableProducts"},
+            { name: "Metal & Brass Handicrafts", path: "MetalBrassHandicrafts"},
+            { name: "Bamboo & Palm Leaf Creations", path: "BambooPalmLeafCreations"},
+            { name: "Hand-carved Wooden Utensils", path: "HandcarvedWoodenUtensils" },
+            { name: "Paper & Stationery Crafts", path: "PaperStationeryCrafts" },
+            { name: "Cultural & Ethnic Accessories", path: "CulturalEthnicAccessories" },
+            { name: "Custom Artwork & Illustrations", path: "CustomArtworkIllustrations" },
+            { name: "Handcrafted Home Décor Items", path: "HandcraftedHomeDécorItems" },
+          ],
+        },
+        { name: "CROWD FUNDING", path: "/crowdfunding" },
+        { name: "WORKSHOPS", path: "/workshops" },
+        { name: "BLOGS", path: "/blogs" },
+        { name: "CREATE ACCOUNT", path: "/registercustomer" },
+        { name: "LOGIN", path: "/login" },
+      ].map((item) => (
+        <div
+          key={item.name}
+          className="nav-item"
+          onMouseEnter={() => item.dropdown && setDropdownOpen(true)}
+          onMouseLeave={() => item.dropdown && setDropdownOpen(false)}
+        >
+          <Link to={item.path} className="nav-link">
+            {item.name}
+          </Link>
+          {item.dropdown && dropdownOpen && (
+            <div className="dropdown-menu">
+                      {item.dropdown.map((category) => (
 
-          { name: "CROWD FUNDING", path: "/crowdfunding" },
-          { name: "WORKSHOPS", path: "/workshops" },
-          { name: "BLOGS", path: "/logout" },
-          { name: "CREATE ACCOUNT", path: "/registercustomer" },
-          { name: "LOGIN", path: "/login" },
-          
-        ].map((item) => (
-          <div
-            key={item.name}
-            className="nav-item"
-            onMouseEnter={() => item.dropdown && setDropdownOpen(true)}
-            onMouseLeave={() => item.dropdown && setDropdownOpen(false)}
+          <Link
+          to={`/category/${encodeURIComponent(category.name)}`} // Encode the category name
+          key={category.name}
+          className="dropdown-item"
           >
-            <Link to={item.path} className="nav-link">
-              {item.name}
-            </Link>
-            {item.dropdown && dropdownOpen && (
-           <div className="dropdown-menu">
-            {item.dropdown.map((category) => (
-              <Link to={`/category/${category.path}`} key={category.path} className="dropdown-item">
-                {category.name}
-              </Link>
-            ))}
+          {category.name}
+          </Link> 
+                    
+          ))}
           </div>
-        )}
-      </div>
-        ))}
-        
-      
-      </div>
+          )}
+        </div>
+      ))}
+    </div>
     </div>
   );
 }

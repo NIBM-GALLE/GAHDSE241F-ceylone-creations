@@ -27,7 +27,13 @@ body {
   color: white;
   font-size: 1rem;
 }
-
+.benefit p{
+  color: white;
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 1rem;
+}
 .icon {
   font-size: 24px;
   margin-right: 10px;

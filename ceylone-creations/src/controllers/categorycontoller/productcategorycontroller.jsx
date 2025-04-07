@@ -1,36 +1,49 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ProductCard from "../../components/Hero/productcard";
+import axios from "axios";
+import ProductCard from "../../components/Hero/productcard.jsx";
+import "../../components/Hero/productgrid.css";
 
-export default function CategoryPage() {
-  const { categoryName } = useParams(); // Get category name from URL
+
+
+const CategoryPage = () => {
+  const {category} = useParams(); // Get the category from the URL
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!categoryName) return;
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get(`http://localhost:5000/api/products/category/${category}`);
+        setProducts(response.data);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching products:", error.response ? error.response.data : error.message);
+        setLoading(false);
+      }
+    };
 
-    fetch(`http://localhost:5000/api/products/${categoryName}`)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log("Fetched data:", data);
-        setProducts(Array.isArray(data) ? data : []);
-      })
-      .catch((error) => console.error("Error fetching products:", error));
-  }, [categoryName]);
+    fetchProducts();
+  }, [category]);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
 
   return (
     <div className="product-list-container">
-      <h2 className="section-title">Products in {categoryName}</h2>
-      <div className="product-list">
-        {products.length > 0 ? (
-          products.map((product) => (
-            <ProductCard key={product._id} product={product} />
-          ))
-        ) : (
-          <p>No products found in this category.</p>
-        )}
-      </div>
-      
+        <h1 className="category-title">{category}</h1>
+        <div className="product-list">
+            {products.map(product => (
+                <ProductCard key={product._id} products={product} />
+            ))}
+        </div>
+       
     </div>
-  );
-}
+);
+
+
+};
+
+export default CategoryPage;

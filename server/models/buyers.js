@@ -8,6 +8,10 @@ const buyerSchema = new mongoose.Schema({
     password: { type: String,}, // Ensure password is required
     phone: { type: String, unique: true, }, // Enforce unique phone
     address: { type: String },
+    dob: { type: Date },
+    location: { type: String },
+    alternateMobile:{ type: String },
+    gender: { type: String },
     role: { type: String, default: 'buyer' },
     profilepicture: { type: String } // Optional, remove if not needed
 

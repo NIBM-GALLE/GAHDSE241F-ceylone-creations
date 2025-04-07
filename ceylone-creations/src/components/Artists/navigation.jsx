@@ -1,4 +1,4 @@
-import { FaSearch, FaUser, FaBell, FaBars } from "react-icons/fa";
+import { FaSearch, FaUser, FaBell, FaBars,FaStore } from "react-icons/fa";
 import { useState,useEffect } from "react";
 import { Link } from "react-router-dom";
 import handleLogout from "../../utills/logout/logout";
@@ -9,12 +9,14 @@ import edit from "../../assets/icons/edit.png";
 import logout from "../../assets/icons/logout.png";
 import settings from "../../assets/icons/settings.png";
 import mail from "../../assets/icons/mail.png";
-import shopicon from "../../assets/icons/shop.png"; 
+import logo from "../../assets/logos/logo.png";
+
 
 export default function Navbarartist() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [profileDropdown, setProfileDropdown] = useState(false);
+  const [shopDropdown, setShopDropdown] = useState(false);
   const [username, setUsername] = useState("");
 
   useEffect(() => {
@@ -24,11 +26,6 @@ export default function Navbarartist() {
       setUsername(storedUsername);
     }
   }, []);
-
-
-
-
-
 
   return (
     <div className="navbar-container">
@@ -49,13 +46,31 @@ export default function Navbarartist() {
         </div>
 
         {/* Logo */}
-        <h1 className="logo">Celone Creations</h1>
+         <img src={logo} alt="Logo" className="logo" />
 
         {/* Icons */}
         <div className="nav-icons">
           <span className="currency">SRI LANKA (RUPEES Rs)</span>
           <FaBell className="icon" />
-          <img src={shopicon} alt="Shop" className="icon" />
+          <div className="shop-container" style={{ position: "relative" }}>
+          <FaStore 
+            className="icon cursor-pointer" 
+            onClick={() => setShopDropdown(!shopDropdown)} 
+          />
+          {shopDropdown && (
+            <div className="shop-dropdown">
+              <Link to="/listing" className="dropdown-item">Item Listing</Link>
+              <Link to="/myitems" className="dropdown-item">My Product</Link>
+              <Link to="/Create Crowd Fund" className="dropdown-item">Create Crowd Fund</Link>
+              <Link to="/Orders" className="dropdown-item">Order</Link>
+              <Link to="/Create Blogs" className="dropdown-item">Create Blog</Link>
+            </div>
+          )}
+        </div>
+
+
+         
+
           <FaUser 
           className="icon cursor-pointer"
           onClick={() => setProfileDropdown(!profileDropdown)}
@@ -64,8 +79,7 @@ export default function Navbarartist() {
             <div className="dropdown-menu-profile">
               <p className="profile-name">Hello,{username}</p>
               <Link to="/profile" className="profile-link" >
-                <img src={profile}  alt="Profile" className="dropdown-icon"/>
-                <span> profile</span>
+                <img src={profile}  alt="Profile" className="dropdown-icon"/><span> profile</span>
               </Link>
               <Link to="/edit-profile" className="profile-link">
                 <img src={edit} alt="Edit Profile" className="dropdown-icon"/>
