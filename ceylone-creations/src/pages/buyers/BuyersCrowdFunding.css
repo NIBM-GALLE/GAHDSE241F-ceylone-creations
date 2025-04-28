@@ -1,0 +1,538 @@
+/* Earthy Brown Color Palette */
+:root {
+    --primary-brown: #8B4513;
+    --secondary-brown: #A0522D;
+    --light-brown: #D2B48C;
+    --cream: #F5DEB3;
+    --dark-brown: #5D4037;
+    --text-color: #333;
+    --light-text: #FFF8E1;
+  }
+  
+  /* Base Styles */
+  .buyers-app {
+    font-family: 'Merriweather', serif;
+    color: var(--text-color);
+    background-color: #FFF9F0;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  
+  /* Navigation */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: var(--primary-brown);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .logo-icon {
+    font-size: 1.8rem;
+  }
+  
+  .logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--cream);
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  
+  .nav-link {
+    color: var(--light-brown);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .nav-link:hover {
+    color: white;
+  }
+  
+  .nav-cta {
+    background-color: var(--light-brown);
+    color: var(--dark-brown);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .nav-cta:hover {
+    background-color: var(--cream);
+    transform: translateY(-2px);
+  }
+  
+  /* Hero Section */
+  .hero {
+    background: 
+      linear-gradient(rgba(91, 64, 55, 0.7), 
+      rgba(91, 64, 55, 0.7)),
+      url('https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 5rem 5%;
+    text-align: center;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Playfair Display', serif;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    line-height: 1.2;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+  }
+  
+  .search-bar {
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .search-bar input {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    border: none;
+    font-size: 1rem;
+  }
+  
+  .search-btn {
+    background-color: var(--primary-brown);
+    color: white;
+    border: none;
+    padding: 1rem 1.8rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+  }
+  
+  .search-btn:hover {
+    background-color: var(--secondary-brown);
+  }
+  
+  /* Campaigns Section */
+  .featured-campaigns {
+    padding: 5rem 5%;
+    background-color: #FFFDFA;
+  }
+  
+  .section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+    color: var(--dark-brown);
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .section-subtitle {
+    text-align: center;
+    color: var(--secondary-brown);
+    margin-bottom: 3rem;
+    font-style: italic;
+    font-size: 1.1rem;
+  }
+  
+  .campaigns-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2.5rem;
+    margin-top: 2rem;
+  }
+  
+  .campaign-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .campaign-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  }
+  
+  .campaign-image {
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  .artisan-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: rgba(139, 69, 19, 0.9);
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    backdrop-filter: blur(2px);
+  }
+  
+  .campaign-content {
+    padding: 1.8rem;
+  }
+  
+  .campaign-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--dark-brown);
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .campaign-content p {
+    margin-bottom: 1.5rem;
+    color: #666;
+    line-height: 1.6;
+  }
+  
+  /* Progress Bar */
+  .progress-container {
+    margin: 1.8rem 0;
+  }
+  
+  .progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.6rem;
+    font-size: 0.95rem;
+  }
+  
+  .amount-raised {
+    font-weight: 700;
+    color: var(--primary-brown);
+  }
+  
+  .goal {
+    color: #777;
+  }
+  
+  .progress-bar {
+    height: 10px;
+    background-color: #eee;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .progress-fill {
+    height: 100%;
+    background-color: var(--primary-brown);
+    border-radius: 5px;
+    transition: width 0.5s ease;
+  }
+  
+  .progress-percent {
+    text-align: right;
+    font-size: 0.9rem;
+    color: var(--secondary-brown);
+    margin-top: 0.5rem;
+    font-weight: 500;
+  }
+  
+  /* Rewards */
+  .rewards {
+    margin: 2rem 0;
+    padding: 1.2rem;
+    background-color: var(--cream);
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-brown);
+  }
+  
+  .rewards h4 {
+    margin-bottom: 0.8rem;
+    color: var(--dark-brown);
+    font-size: 1.1rem;
+  }
+  
+  .rewards ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .rewards li {
+    margin-bottom: 0.6rem;
+    padding-left: 1.8rem;
+    position: relative;
+    color: #555;
+  }
+  
+  .rewards li:before {
+    content: '•';
+    color: var(--primary-brown);
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0.5rem;
+    top: -0.2rem;
+  }
+  
+  /* Support Button */
+  .support-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--primary-brown);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 1rem;
+  }
+  
+  .support-btn:hover {
+    background-color: var(--secondary-brown);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Newsletter */
+  .newsletter {
+    background-color: var(--dark-brown);
+    color: white;
+    padding: 4rem 5%;
+    text-align: center;
+  }
+  
+  .newsletter h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .newsletter p {
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .newsletter-form {
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .newsletter-form input {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    border: none;
+    font-size: 1rem;
+  }
+  
+  .newsletter-form button {
+    background-color: var(--light-brown);
+    color: var(--dark-brown);
+    border: none;
+    padding: 1rem 2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1rem;
+  }
+  
+  .newsletter-form button:hover {
+    background-color: var(--cream);
+  }
+  
+  /* Footer */
+  .main-footer {
+    background-color: var(--primary-brown);
+    color: var(--light-text);
+    padding: 4rem 5% 2rem;
+  }
+  
+  .footer-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+  
+  .footer-brand {
+    max-width: 300px;
+  }
+  
+  .footer-motto {
+    margin-top: 1.5rem;
+    opacity: 0.8;
+    line-height: 1.6;
+  }
+  
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  
+  .link-column h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+    color: var(--cream);
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .link-column a {
+    display: block;
+    color: var(--light-brown);
+    margin-bottom: 0.8rem;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .link-column a:hover {
+    color: white;
+  }
+  
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .social-links a {
+    color: var(--light-brown);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .social-links a:hover {
+    color: white;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem;
+    }
+    
+    .nav-links {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+    
+    .hero h1 {
+      font-size: 2.2rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.1rem;
+    }
+    
+    .footer-content {
+      grid-template-columns: 1fr;
+    }
+    
+    .footer-links {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    
+    .campaigns-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .search-bar, .newsletter-form {
+      flex-direction: column;
+    }
+    
+    .search-bar input, .search-btn {
+      border-radius: 30px;
+      width: 100%;
+    }
+    
+    .search-btn {
+      margin-top: 0.5rem;
+    }
+    
+    .newsletter-form input, .newsletter-form button {
+      border-radius: 8px;
+      width: 100%;
+    }
+    
+    .newsletter-form button {
+      margin-top: 0.5rem;
+    }
+    
+    .footer-bottom {
+      flex-direction: column;
+      gap: 1rem;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero h1 {
+      font-size: 1.8rem;
+    }
+    
+    .section-title {
+      font-size: 1.8rem;
+    }
+    
+    .campaign-content {
+      padding: 1.2rem;
+    }
+    
+    .campaign-content h3 {
+      font-size: 1.3rem;
+    }
+  }

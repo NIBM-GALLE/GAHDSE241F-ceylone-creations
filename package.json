@@ -1,0 +1,23 @@
+{
+  "name": "gahdse241f-ceylone-creations",
+  "version": "1.0.0",
+  "description": "A platform for buying and selling handmade items, connecting artisans with customers. Features include secure transactions, product listings, and an intuitive user interface for a seamless shopping experience.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NIBM-GALLE/GAHDSE241F-ceylone-creations.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NIBM-GALLE/GAHDSE241F-ceylone-creations/issues"
+  },
+  "homepage": "https://github.com/NIBM-GALLE/GAHDSE241F-ceylone-creations#readme",
+  "dependencies": {
+    "react-scripts": "^5.0.1"
+  }
+}

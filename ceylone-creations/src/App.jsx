@@ -1,22 +1,23 @@
-//import { useEffect, useState } from 'react';
-import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import Navbar from './components/Navbar/navbar';
+// filepath: c:\Users\subat\GAHDSE241F-ceylone-creations\ceylone-creations\src\App.jsx
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import BuyersCrowdFunding from './pages/buyers/BuyersCrowdFunding';
+import ArtisantSubmitForm from './pages/artisants/ArtisantSubmitForm';    
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-      <Navbar/>
-      <div className="white-gradient">
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-      </div>
-    </BrowserRouter>
+    <Router>
+      <div className="min-h-screen flex flex-col">
+        <main className="flex-grow">
+          <Routes>
     
-    </div>
+          <Route path="/buyers" element={<BuyersCrowdFunding />} />
+          <Route path="/artisantsform" element={<ArtisantSubmitForm />} />
+          
+          </Routes>
+        </main>
+      </div>
+    </Router>
   );
 }
 
