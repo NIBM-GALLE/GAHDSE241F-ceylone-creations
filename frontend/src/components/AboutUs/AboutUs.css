@@ -1,0 +1,162 @@
+/* General Styling */
+.about-us {
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    background-color: #f4e1d2;
+    color: #333;
+  }
+  
+  /* Banner */
+  .banner {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .banner-overlay {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 30px 50px;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+  }
+
+  .banner h1 {
+    color: white;
+  }
+  
+  .banner h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .banner p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    font-style: bold;
+  }
+  
+  /* Sections */
+  .section {
+    padding: 60px 20px;
+    background: #f4e4d8;
+  }
+  
+  .section-content {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    gap: 40px;
+  }
+  
+  .reverse {
+    flex-direction: row-reverse;
+  }
+  
+  .text-content {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .text-content h2 {
+    font-size: 3rem;
+    color: #8b5e3c;
+  }
+  
+  .text-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+  
+  /* Images */
+  .section img {
+    width: 60%;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .section img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Our Values */
+  .our-values {
+    padding: 80px 20px;
+    background: #f4e4d8;
+  }
+  
+  .our-values h2 {
+    font-size: 3rem;
+    color: #8b5e3c;
+    margin-bottom: 50px;
+  }
+  
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 50px;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  .value-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .value-card img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .value-card h3 {
+    margin-top: 10px;
+    font-size: 1.2rem;
+  }
+  
+  /* Animations */
+  .fade-in {
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  .slide-in {
+    animation: slideIn 1.5s ease-in-out;
+  }
+  
+  .fade-up {
+    animation: fadeUp 1.5s ease-in-out;
+  }
+  
+  .slide-up {
+    animation: slideUp 1.5s ease-in-out;
+  }
+  
+  /* Keyframes */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
