@@ -2,7 +2,9 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import BuyersCrowdFunding from './pages/buyers/BuyersCrowdFunding';
-import ArtisantSubmitForm from './pages/artisants/ArtisantSubmitForm';    
+import ArtisantSubmitForm from './pages/artisants/ArtisantSubmitForm';
+import HomePage from './pages/elibrary/HomePage';
+import TutorialDetailPage from './pages/elibrary/TutorialDetailPage';    
 
 function App() {
   return (
@@ -13,6 +15,9 @@ function App() {
     
           <Route path="/buyers" element={<BuyersCrowdFunding />} />
           <Route path="/artisantsform" element={<ArtisantSubmitForm />} />
+          <Route path="/elibrary"element={<HomePage />} />
+          <Route path="/elibrary"element={<TutorialDetailPage />} />
+
           
           </Routes>
         </main>

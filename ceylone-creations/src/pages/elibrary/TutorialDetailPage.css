@@ -1,0 +1,361 @@
+.tutorial-detail-page {
+    min-height: 100vh;
+    background-color: #f9fafb;
+  }
+  
+  /* Breadcrumb */
+  .breadcrumb {
+    background-color: white;
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  .breadcrumb nav ol {
+    display: flex;
+    align-items: center;
+    max-width: 72rem;
+    margin: 0 auto;
+  }
+  
+  .breadcrumb li {
+    display: flex;
+    align-items: center;
+  }
+  
+  .breadcrumb li:not(:first-child)::before {
+    content: '/';
+    margin: 0 0.5rem;
+    color: #9ca3af;
+  }
+  
+  .breadcrumb a {
+    color: #4b5563;
+    transition: color 0.3s;
+  }
+  
+  .breadcrumb a:hover {
+    color: #d97706;
+  }
+  
+  .breadcrumb li[aria-current="page"] {
+    color: #d97706;
+  }
+  
+  /* Main Content */
+  .tutorial-main {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  
+  .tutorial-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  @media (min-width: 1024px) {
+    .tutorial-container {
+      flex-direction: row;
+    }
+  }
+  
+  .tutorial-content {
+    flex: 2;
+  }
+  
+  .tutorial-sidebar {
+    flex: 1;
+  }
+  
+  /* Tutorial Content */
+  .tutorial-content h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+  
+  .author-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .author-avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 9999px;
+    background-color: #e5e7eb;
+    margin-right: 0.75rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9ca3af;
+  }
+  
+  .author-name {
+    font-weight: 500;
+  }
+  
+  .author-since {
+    color: #6b7280;
+    font-size: 0.875rem;
+  }
+  
+  .tutorial-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .meta-rating {
+    display: flex;
+    align-items: center;
+    background-color: #f3f4f6;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+  }
+  
+  .star {
+    color: #f59e0b;
+    margin-right: 0.25rem;
+  }
+  
+  .meta-item {
+    background-color: #f3f4f6;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+  }
+  
+  .main-image {
+    height: 24rem;
+    background-color: #e5e7eb;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9ca3af;
+  }
+  
+  /* Materials Section */
+  .materials-section {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+  }
+  
+  .materials-section h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .materials-list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0.5rem;
+  }
+  
+  @media (min-width: 640px) {
+    .materials-list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  .materials-list li {
+    display: flex;
+    align-items: center;
+  }
+  
+  .materials-list li span {
+    margin-right: 0.5rem;
+  }
+  
+  /* Steps Section */
+  .steps-section {
+    margin-bottom: 2rem;
+  }
+  
+  .steps-section h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+  
+  .steps-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .step-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .step-number {
+    background-color: #d97706;
+    color: white;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    flex-shrink: 0;
+  }
+  
+  .step-content {
+    flex: 1;
+  }
+  
+  .step-card {
+    display: flex;
+  }
+  
+  .step-content h3 {
+    font-weight: 700;
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .step-content p {
+    color: #6b7280;
+    margin-bottom: 1rem;
+  }
+  
+  .step-image {
+    height: 12rem;
+    background-color: #e5e7eb;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9ca3af;
+  }
+  
+  .step-time {
+    color: #6b7280;
+    font-size: 0.875rem;
+  }
+  
+  /* Sidebar */
+  .tutorial-sidebar {
+    position: relative;
+  }
+  
+  .sidebar-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  @media (min-width: 1024px) {
+    .sidebar-card {
+      position: sticky;
+      top: 1rem;
+    }
+  }
+  
+  .sidebar-card h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .sidebar-description {
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+  }
+  
+  .sidebar-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .info-item h3 {
+    font-weight: 500;
+    color: #6b7280;
+    margin-bottom: 0.25rem;
+  }
+  
+  .sidebar-button {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    transition: all 0.3s;
+  }
+  
+  .sidebar-button.primary {
+    background-color: #d97706;
+    color: white;
+  }
+  
+  .sidebar-button.primary:hover {
+    background-color: #b45309;
+  }
+  
+  .sidebar-button.secondary {
+    background-color: white;
+    border: 1px solid #d97706;
+    color: #d97706;
+  }
+  
+  .sidebar-button.secondary:hover {
+    background-color: #fffbeb;
+  }
+  
+  /* Author Card */
+  .author-card {
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+    border-top: 1px solid #e5e7eb;
+  }
+  
+  .author-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .author-avatar.small {
+    width: 3rem;
+    height: 3rem;
+  }
+  
+  .author-title {
+    color: #6b7280;
+    font-size: 0.875rem;
+  }
+  
+  .author-bio {
+    color: #6b7280;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+  
+  .author-link {
+    color: #d97706;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: text-decoration 0.3s;
+  }
+  
+  .author-link:hover {
+    text-decoration: underline;
+  }
