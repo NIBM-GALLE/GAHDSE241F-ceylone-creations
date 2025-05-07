@@ -1,3 +1,50 @@
 <resources>
     <string name="app_name">Ceylone_Creation</string>
+    <string name="full_name">Full Name</string>
+    <string name="email">Email</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="buyer">Buyer</string>
+    <string name="seller">Seller</string>
+    <string name="shop_name">Shop Name</string>
+    <string name="business_registration_optional">Business Registration (Optional)</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="already_have_an_account_sign_in">Already have an account? Sign In</string>
+    <string name="welcome_text">Welcome!</string>
+    <string name="create_account_text">Create your account</string>
+    <string name="sign_up_image_description">Sign Up Banner</string>
+    <string name="login_activity_label">Login</string>
+    <string name="sign_up_activity_label">Sign Up</string>
+
+    <string name="login_button_text">Login</string>
+    <string name="signup_button_text">Sign Up</string>
+    <string name="Ceylone_Creation">Ceylone Creation</string>
+    <string name="profile_activity_label" />
+    <string name="already_have_account">Already have an account? <u>Sign In</u></string>
+    <string name="complete_profile_title">Complete Your Profile</string>
+    <string name="complete_profile_subtitle">Join Ceylon\'s Creation as an artisan or sign up with your social account.</string>
+    <string name="profile_image_desc">User profile image</string>
+    <string name="edit_profile_image_desc">Edit profile image</string>
+    <string name="name_label">Name</string>
+    <string name="name_hint">Enter your name</string>
+    <string name="email_label">Email</string>
+    <string name="email_hint">Enter your Email</string>
+    <string name="password_label">Password</string>
+    <string name="password_hint">Enter your password</string>
+    <string name="address_label">Address</string>
+    <string name="address_hint">Enter your address</string>
+    <string name="phone_label">Phone number</string>
+    <string name="phone_hint">Enter your phone number</string>
+    <string name="complete_profile_button">Complete Profile</string>
+    <string name="create_account">Create Account</string>
+    <string name="signup_subtitle">Join Ceylone Creation as an artisan or sign up with your social account.</string>
+    <string name="enter_business_name">Enter your business name</string>
+    <string name="terms_conditions">Agree with Terms &amp; Conditions</string>
+    <string name="buyer_icon_description">Buyer icon</string>
+    <string name="seller_icon_description">Seller icon</string>
+>
+
+
 </resources>
+

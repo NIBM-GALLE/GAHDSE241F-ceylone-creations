@@ -1,0 +1,22 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Comment bubble -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M20,2H4C2.9,2 2,2.9 2,4V16C2,17.1 2.9,18 4,18H8V22L12,18H20C21.1,18 22,17.1 22,16V4C22,2.9 21.1,2 20,2Z"/>
+
+
+
+    <!-- Simple star -->
+    <path
+        android:fillColor="#FFFFC107"
+        android:pathData="M12,2L14.5,8.5H21L15.5,13L18,19.5L12,15L6,19.5L8.5,13L3,8.5H9.5Z"
+        android:scaleX="0.25"
+        android:scaleY="0.25"
+        android:translateX="15"
+        android:translateY="4"/>
+</vector>
