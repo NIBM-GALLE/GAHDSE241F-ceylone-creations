@@ -1,0 +1,124 @@
+/* General Styling */
+.success-stories-blogs {
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    background-color: #f4e1d2;
+    color: #333;
+}
+
+/* Banner */
+.banner {
+    height: 200px;
+    background: url('../../assets/images/banner2.png') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.banner-overlay {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 30px 50px;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.banner h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.banner p {
+    font-size: 1.5rem;
+}
+
+/* Sections */
+.section {
+    padding: 60px 20px;
+    background: #f4e4d8;
+}
+
+h2 {
+    font-size: 3rem;
+    color: #8b5e3c;
+    margin-bottom: 40px;
+}
+
+/* Stories & Blogs Container */
+.stories-container,
+.blogs-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Story and Blog Cards */
+.story-card,
+.blog-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+}
+
+.story-card img,
+.blog-card img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.story-card img:hover,
+.blog-card img:hover {
+    transform: scale(1.05);
+}
+
+h3 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    color: #8b5e3c;
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.slide-in {
+    animation: slideIn 1.5s ease-in-out;
+}
+
+.fade-up {
+    animation: fadeUp 1.5s ease-in-out;
+}
+
+.slide-up {
+    animation: slideUp 1.5s ease-in-out;
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
