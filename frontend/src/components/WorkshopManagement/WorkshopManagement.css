@@ -1,4 +1,3 @@
-/* General Styling */
 .workshop-management {
   font-family: "Poppins", sans-serif;
   background-color: #f8f5f2;
@@ -7,7 +6,6 @@
   padding-bottom: 60px;
 }
 
-/* Banner */
 .banner {
   height: 200px;
   background-size: cover;
@@ -41,7 +39,6 @@
   font-weight: 400;
 }
 
-/* Add Workshop Button */
 .add-workshop-btn-container {
   max-width: 1200px;
   margin: 0 auto 40px;
@@ -72,7 +69,6 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Workshop Form Section */
 .workshop-form-section {
   max-width: 1200px;
   margin: 0 auto 50px;
@@ -195,7 +191,6 @@
   opacity: 1;
 }
 
-/* Image Upload */
 .image-upload {
   margin-top: 10px;
 }
@@ -243,12 +238,16 @@
   border-radius: 8px;
   overflow: hidden;
   border: 1px solid #eee;
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  background-color: #f8f9fa; 
 }
 
 .image-preview img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; 
   transition: transform 0.5s ease;
 }
 
@@ -273,10 +272,8 @@
   background-color: rgba(0, 0, 0, 0.9);
 }
 
-/* Schedule Section */
 .section-label {
   display: block;
-  margin-bottom: 15px;
   font-weight: 500;
   color: #5d4037;
   font-size: 1.1rem;
@@ -346,12 +343,13 @@
   background-color: rgba(93, 64, 55, 0.1);
 }
 
-/* Contact Section */
 .contact-section {
-  margin-top: 10px;
+  margin-top: 10px; 
+  display: flex;
+  flex-direction: column;
+  gap: 25px; 
 }
 
-/* Form Actions */
 .form-actions {
   display: flex;
   justify-content: flex-end;
@@ -396,7 +394,6 @@
   background-color: #e0e0e0;
 }
 
-/* Current Workshops Section */
 .workshop-list-section {
   max-width: 1200px;
   margin: 0 auto;
@@ -460,6 +457,8 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
   border: 1px solid #eee;
+  display: flex; 
+  flex-direction: column; 
 }
 
 .workshop-card:hover {
@@ -470,6 +469,7 @@
 .card-image {
   height: 200px;
   overflow: hidden;
+  background-color: #f0f0f0; 
 }
 
 .card-image img {
@@ -477,6 +477,7 @@
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
+  color: #ccc; 
 }
 
 .workshop-card:hover .card-image img {
@@ -485,6 +486,7 @@
 
 .card-content {
   padding: 25px;
+  flex-grow: 1; 
 }
 
 .card-content h3 {
@@ -494,11 +496,24 @@
   font-weight: 600;
 }
 
+.card-content p { 
+    min-height: 4.5em; 
+    max-height: 4.5em;
+    line-height: 1.5em; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
+    margin-bottom: 15px; 
+}
+
+
 .card-meta {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 20px;
+  margin-top: auto; 
 }
 
 .card-meta span {
@@ -526,6 +541,7 @@
 .card-actions {
   display: flex;
   gap: 12px;
+  padding: 20px 25px 25px 25px; 
 }
 
 .edit-btn, .delete-btn {
@@ -561,7 +577,6 @@
   background-color: #c62828;
 }
 
-/* Animations */
 .fade-in {
   animation: fadeIn 1s ease-in-out;
 }
@@ -580,7 +595,6 @@
   to { transform: translateY(0); opacity: 1; }
 }
 
-/* Responsive Design */
 @media (max-width: 992px) {
   .form-columns {
     flex-direction: column;
@@ -611,7 +625,7 @@
 
   .form-row {
     flex-direction: column;
-    gap: 25px;
+    gap: 25px; 
   }
   
   .form-container {

@@ -1,0 +1,346 @@
+/* General Styling */
+.crowdfunding {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  background-color: #f4e1d2;
+  color: #333;
+  padding-bottom: 50px;
+  min-height: 100vh;
+}
+
+/* Banner */
+.banner {
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-bottom: 5px solid #8b5e3c;
+  margin-bottom: 30px;
+}
+
+.banner-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 30px 50px;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  max-width: 80%;
+}
+
+.banner h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin: 0;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.banner p {
+  font-size: 1.6rem;
+  margin-top: 10px;
+  font-weight: bold;
+  animation: slideIn 1.5s ease-in-out;
+}
+
+/* Category Filters */
+.category-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0 20px 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.filter-btn {
+  background-color: #d4b996;
+  color: #333;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  background-color: #c0a583;
+}
+
+.filter-btn.active {
+  background-color: #8b5e3c;
+  color: white;
+}
+
+/* Campaign Container */
+.campaign-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 20px;
+  animation: fadeIn 2s ease-in-out;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Campaign Box */
+.campaign-box {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  text-align: center;
+  width: 350px;
+  padding: 20px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.campaign-image-container {
+  position: relative;
+}
+
+.campaign-box img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.category-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(139, 94, 60, 0.9);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  text-transform: capitalize;
+}
+
+.campaign-box h2 {
+  color: #8b5e3c;
+  font-size: 1.8rem;
+  margin: 10px 0;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.campaign-box p {
+  font-size: 1rem;
+  color: #555;
+  padding: 0 10px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  flex-grow: 1;
+}
+
+/* Progress Bar */
+.progress-container {
+  width: 100%;
+  height: 10px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  margin: 10px 0;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #8b5e3c;
+  border-radius: 5px;
+  transition: width 0.5s ease;
+}
+
+.campaign-stats {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0 20px;
+  font-size: 0.9rem;
+  color: #555;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.campaign-stats div {
+  flex: 1;
+  min-width: 100px;
+}
+
+.campaign-stats strong {
+  color: #8b5e3c;
+  font-size: 1.1rem;
+}
+
+/* Buttons */
+.details-btn {
+  background-color: #8b5e3c;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.details-btn:hover {
+  background-color: #704a31;
+}
+
+.support-btn {
+  background-color: #5c8b3c;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+  width: 100%;
+  font-weight: bold;
+}
+
+.support-btn:hover {
+  background-color: #4a7031;
+}
+
+/* Reward Details */
+.reward-details {
+  background-color: #f9f5f0;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.reward-details h3 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.reward-tier {
+  padding: 10px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.reward-tier:last-child {
+  border-bottom: none;
+}
+
+.reward-tier p {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+.reward-tier strong {
+  color: #8b5e3c;
+}
+
+.items-left {
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.artisan-info {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.artisan-info h4 {
+  color: #8b5e3c;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.artisan-info p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  padding: 0;
+  text-align: left;
+}
+
+.artisan-info strong {
+  color: #8b5e3c;
+}
+
+.artisan-story {
+  font-style: italic;
+  margin-top: 10px !important;
+  line-height: 1.5;
+}
+
+/* Hover Effects */
+.campaign-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.slide-in {
+  animation: slideIn 1.5s ease-in-out;
+}
+
+.fade-up {
+  animation: fadeUp 1.5s ease-in-out;
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .banner h1 {
+    font-size: 2.5rem;
+  }
+  
+  .banner p {
+    font-size: 1.2rem;
+  }
+  
+  .campaign-box {
+    width: 100%;
+    max-width: 350px;
+  }
+  
+  .category-filters {
+    justify-content: center;
+  }
+}

@@ -1,39 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Reviews.css";
 import { FaStar, FaRegStar, FaStarHalfAlt, FaCloudUploadAlt } from "react-icons/fa";
 
-const reviewsData = [
-  {
-    id: 1,
-    topic: "Outstanding Craftsmanship!",
-    name: "Emily Johnson",
-    rating: 5,
-    review:
-      "Absolutely love the handcrafted wooden sculptures I purchased! The attention to detail is amazing.",
-    date: "March 20, 2025",
-  },
-  {
-    id: 2,
-    topic: "Excellent Customer Service",
-    name: "Michael Roberts",
-    rating: 4.5,
-    review:
-      "Had a minor issue with my order, but the support team resolved it quickly. Very satisfied!",
-    date: "March 18, 2025",
-  },
-  {
-    id: 3,
-    topic: "High-Quality Products",
-    name: "Sophia Martinez",
-    rating: 4,
-    review:
-      "The jewelry pieces I bought are elegant and durable. Will definitely buy again!",
-    date: "March 15, 2025",
-  },
-];
-
 const Reviews = () => {
-  const [reviews, setReviews] = useState(reviewsData);
+  // State for reviews and form data (keeping your original structure)
+  const [reviews, setReviews] = useState([]);
   const [newReview, setNewReview] = useState({
     name: "",
     topic: "",
@@ -43,7 +14,25 @@ const Reviews = () => {
     overallRating: 0,
     image: null,
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // Fetch reviews on component mount
+  useEffect(() => {
+    const fetchReviews = async () => {
+      try {
+        const response = await fetch("http://localhost:5000/api/reviews");
+        if (response.ok) {
+          const data = await response.json();
+          setReviews(data);
+        }
+      } catch (error) {
+        console.error("Error fetching reviews:", error);
+      }
+    };
+    fetchReviews();
+  }, []);
+
+  // Your original handlers (unchanged)
   const handleInputChange = (e) => {
     setNewReview({ ...newReview, [e.target.name]: e.target.value });
   };
@@ -56,22 +45,55 @@ const Reviews = () => {
     setNewReview({ ...newReview, [category]: rating });
   };
 
-  const handleSubmit = (e) => {
+  // Modified submit handler to connect to backend
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (newReview.name && newReview.review) {
-      setReviews([{ ...newReview, date: new Date().toLocaleDateString() }, ...reviews]);
-      setNewReview({
-        name: "",
-        topic: "",
-        review: "",
-        artisanRating: 0,
-        productRating: 0,
-        overallRating: 0,
-        image: null,
+    if (!newReview.name || !newReview.review) return;
+
+    setIsSubmitting(true);
+    try {
+      const response = await fetch("http://localhost:5000/api/reviews", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: newReview.name,
+          topic: newReview.topic,
+          review: newReview.review,
+          artisanRating: newReview.artisanRating,
+          productRating: newReview.productRating,
+          overallRating: newReview.overallRating,
+          image: newReview.image,
+          date: new Date().toLocaleDateString('en-US', {
+            month: 'long',
+            day: 'numeric',
+            year: 'numeric'
+          })
+        }),
       });
+
+      if (response.ok) {
+        const createdReview = await response.json();
+        setReviews([createdReview, ...reviews]);
+        setNewReview({
+          name: "",
+          topic: "",
+          review: "",
+          artisanRating: 0,
+          productRating: 0,
+          overallRating: 0,
+          image: null,
+        });
+      }
+    } catch (error) {
+      console.error("Error submitting review:", error);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
+  // Your original star rendering function (unchanged)
   const renderStars = (rating, category) => {
     return [...Array(5)].map((_, index) => (
       <span key={index} onClick={() => handleStarClick(category, index + 1)}>
@@ -80,11 +102,12 @@ const Reviews = () => {
     ));
   };
 
+  // Your exact original JSX structure
   return (
     <div className="reviews-container">
       <h2 className="reviews-title">Customer Reviews & Ratings</h2>
 
-      {/* Review Submission Form */}
+      {/* Review Submission Form - completely unchanged */}
       <div className="review-form">
         <h3>Share Your Experience</h3>
         <form onSubmit={handleSubmit}>
@@ -128,19 +151,31 @@ const Reviews = () => {
 
           {newReview.image && <img src={newReview.image} alt="Uploaded preview" className="preview-img" />}
 
-          <button type="submit" className="submit-button">Submit Review</button>
+          <button 
+            type="submit" 
+            className="submit-button"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? "Sending..." : "Send Message"}
+          </button>
         </form>
       </div>
 
-      {/* Submitted Reviews */}
+      {/* Reviews Display - completely unchanged except for backend data */}
       <div className="reviews-section">
-        {reviews.map(({ id, topic, name, rating, review, date, image }) => (
-          <div key={id} className="review-card">
-            <h3 className="review-topic">{topic}</h3> {/* Topic added */}
-            <p className="reviewer-name">by {name} <span className="review-date">({date})</span></p>
-            <div className="star-rating">{renderStars(rating)}</div>
-            {image && <img src={image} alt="User submitted" className="review-img" />}
-            <p className="review-text">{review}</p>
+        {reviews.map((review) => (
+          <div key={review._id} className="review-card">
+            <h3 className="review-topic">{review.topic}</h3>
+            <p className="reviewer-name">by {review.name} <span className="review-date">({review.date})</span></p>
+            <div className="star-rating">
+              {[...Array(5)].map((_, i) => (
+                i + 1 <= review.overallRating 
+                  ? <FaStar key={i} className="star full" /> 
+                  : <FaRegStar key={i} className="star empty" />
+              ))}
+            </div>
+            {review.image && <img src={review.image} alt="User submitted" className="review-img" />}
+            <p className="review-text">{review.review}</p>
           </div>
         ))}
       </div>

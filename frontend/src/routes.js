@@ -11,6 +11,8 @@ import BlogsStoriesPage from "./pages/BlogsStoriesPage";
 import WorkshopManagementPage from "./pages/WorkshopManagementPage";
 import MessagingCenterPage from "./pages/MessagingCenterPage";
 import MapPage from "./pages/MapPage";
+import CrowdfundingPage from "./pages/CrowdfundingPage";
+import SkillHubPage from "./pages/SkillHubPage";
 
 const AppRoutes = () => {
   return (
@@ -26,6 +28,8 @@ const AppRoutes = () => {
         <Route path="/manage-workshops" element={<WorkshopManagementPage />} />
         <Route path="/messaging" element={<MessagingCenterPage />} />
         <Route path="/map" element={<MapPage />} />
+        <Route path="/crowdfunding" element={<CrowdfundingPage />} />
+        <Route path="/skill-hub" element={<SkillHubPage />} />
       </Routes>
     </Router>
   );
