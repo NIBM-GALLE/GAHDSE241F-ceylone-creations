@@ -19,22 +19,22 @@ const SkillHub = () => {
       id: "craft-master",
       title: "Traditional Craft Master",
       description: "Become a certified master in Sri Lankan traditional crafts. This path focuses on core artisan skills enhanced by technology.",
-      color: "#8b5e3c", // Brownish-gold
+      color: "#8b5e3c",
       skills: [1, 4, 7]
     },
     {
       id: "digital-artisan",
       title: "Digital Artisan Entrepreneur",
       description: "Combine traditional skills with modern business acumen and digital tools to thrive in the online marketplace.",
-      color: "#4a7c59", // Green
+      color: "#4a7c59",
       skills: [2, 5, 6]
     },
     {
       id: "sustainability-expert",
       title: "Sustainability Expert",
       description: "Master eco-friendly materials, sustainable practices, and circular economy principles in crafts.",
-      color: "#3a86ff", // Blue
-      skills: [3, 5, 7] // Note: Course 5 and 7 are shared
+      color: "#3a86ff",
+      skills: [3, 5, 7]
     }
   ];
   
@@ -43,13 +43,9 @@ const SkillHub = () => {
   useEffect(() => {
     // Simulating fetching progress data
     const mockProgress = {
-      1: 25, // Traditional Craft Mastery - In Progress
-      2: 0,  // Digital Marketing for Artisans - Not Started
-      3: 100, // Sustainable Material Science - Completed
-      // 4: Advanced Textile Engineering - Not Started
-      // 5: Artisan Business Intelligence - Not Started (but Sustainable Material Science is done)
-      // 6: AI-Assisted Product Design - Not Started
-      // 7: Smart Craft Technologies - Not Started
+      1: 25,
+      2: 0,
+      3: 100,
     };
     setProgressData(mockProgress);
   }, []);
@@ -120,9 +116,9 @@ const SkillHub = () => {
       duration: "6 weeks",
       format: "Blockchain Simulation",
       certification: "Artisan Entrepreneur Certification",
-      requirements: "None", // Example: might depend on Digital Marketing or not.
+      requirements: "None",
       xp: 450,
-      dependencies: [2], // Example dependency
+      dependencies: [2],
       tech: ["Blockchain", "Smart Contracts", "Market Predictions"],
     },
     {
@@ -136,7 +132,7 @@ const SkillHub = () => {
       certification: "AI Design Specialist",
       requirements: "Basic design skills",
       xp: 550,
-      dependencies: [2, 4], // Depends on Digital Marketing and Advanced Textile
+      dependencies: [2, 4],
       tech: ["Generative AI", "3D Prototyping", "Market Fit Analysis"],
     },
     {
@@ -150,7 +146,7 @@ const SkillHub = () => {
       certification: "Smart Craft Master",
       requirements: "Advanced crafting skills",
       xp: 750,
-      dependencies: [1, 3], // Depends on Craft Mastery and Sustainable Materials
+      dependencies: [1, 3],
       tech: ["IoT Integration", "Smart Materials", "AR Assembly"],
     },
   ];
@@ -160,7 +156,7 @@ const SkillHub = () => {
   };
 
   const getLevelColor = (level) => {
-    const colors = ['#4cc9f0', '#4895ef', '#4361ee', '#3f37c9', '#3a0ca3']; // Cyan to Purple
+    const colors = ['#4cc9f0', '#4895ef', '#4361ee', '#3f37c9', '#3a0ca3'];
     return colors[Math.min(Math.max(0, level - 1), colors.length - 1)];
   };
 
@@ -267,15 +263,11 @@ const SkillHub = () => {
 
     const getMilestoneStatus = (milestoneIndex) => {
       if (totalSkillsInPath === 0) return '';
-      // Milestone 1: 1st skill completed
-      // Milestone 2: ~half skills completed
-      // Milestone 3: All skills completed
       if (milestoneIndex === 0) return completedSkillsCount > 0 ? 'completed' : (skillsInPath.some(id => progressData[id] > 0) ? 'active' : '');
       if (milestoneIndex === 1) return completedSkillsCount >= Math.ceil(totalSkillsInPath / 2) && totalSkillsInPath >=2 ? 'completed' : (completedSkillsCount > 0 && totalSkillsInPath >=2 ? 'active' : '');
       if (milestoneIndex === 2) return completedSkillsCount === totalSkillsInPath && totalSkillsInPath >=3 ? 'completed' : (completedSkillsCount >= Math.ceil(totalSkillsInPath / 2) && totalSkillsInPath >=3 ? 'active' : '');
       return '';
     };
-
 
     return (
       <div className="skill-tree-container">
@@ -303,7 +295,7 @@ const SkillHub = () => {
                 <div className="path-milestones-progress" style={{ width: `${milestoneProgressPercent}%`, backgroundColor: path.color }}></div>
               </div>
               {['Beginner', 'Intermediate', 'Advanced'].map((label, index) => (
-                 totalSkillsInPath > index && ( // Only render milestone if path has enough skills for it
+                 totalSkillsInPath > index && (
                     <div key={label} className={`milestone ${getMilestoneStatus(index)}`}>
                         <div className="milestone-circle" style={getMilestoneStatus(index) === 'completed' ? { backgroundColor: path.color, borderColor: path.color } : {}}>
                         {getMilestoneStatus(index) === 'completed' ? <i className="fas fa-check"></i> : index + 1}
@@ -324,23 +316,20 @@ const SkillHub = () => {
               const isCourseCompleted = progress === 100;
               const isCourseInProgress = progress > 0 && progress < 100;
               const areDependenciesMet = course.dependencies.every(depId => {
-                // Check dependencies within the current path first, then global.
                 const isDepInPath = skillsInPath.includes(depId);
-                if (isDepInPath) { // if dependency is part of the path, it must be completed
+                if (isDepInPath) {
                     const depIndex = skillsInPath.indexOf(depId);
-                    // it must be completed if it's earlier in path
                     return skillsInPath.slice(0, index).includes(depId) ? (progressData[depId] === 100) : true; 
                 }
-                return progressData[depId] === 100; // Global dependency check
+                return progressData[depId] === 100;
               });
 
               let nodeStatus = 'available';
               if (isCourseCompleted) nodeStatus = 'completed';
               else if (isCourseInProgress) nodeStatus = 'in-progress';
               else if (!areDependenciesMet && !skillsInPath.slice(0, index).every(prevSkillId => progressData[prevSkillId] === 100)) {
-                // Check if previous courses IN THIS PATH are completed
                  if (index > 0 && progressData[skillsInPath[index-1]] !== 100) nodeStatus = 'locked';
-                 else if (!areDependenciesMet) nodeStatus = 'locked'; // General dependency lock
+                 else if (!areDependenciesMet) nodeStatus = 'locked';
               }
               
               return (
@@ -357,7 +346,6 @@ const SkillHub = () => {
                       <span className="node-level">Level {course.level}</span>
                       <span className="node-xp"><i className="fas fa-star"></i> {course.xp} XP</span>
                     </div>
-                    {/* <p className="node-description">{course.description.substring(0,70)}...</p> */}
                     <div className="node-tech">
                       {course.tech.slice(0, 2).map(tech => (
                         <span key={tech} className="tech-tag small"><i className="fas fa-cogs"></i> {tech}</span>
@@ -440,15 +428,13 @@ const SkillHub = () => {
   return (
     <div className="skillhub">
       <div className="banner">
-        {/* Subtle background elements could be added here via CSS if desired */}
-        <div className="banner-content"> {/* Changed from banner-overlay for clarity */}
+        <div className="banner-content">
           <h1 className="fade-in">Skill Development Hub</h1>
           <p className="slide-in">Augment Your Artisan Skills with Future Tech</p>
           <div className="banner-tech-tags">
             <span><i className="fas fa-brain"></i> AI Mentors</span>
             <span><i className="fas fa-vr-cardboard"></i> AR Guidance</span>
             <span><i className="fab fa-bitcoin"></i> Blockchain Certs</span>
-            {/* fab fa-btc or similar for blockchain */}
             <span><i className="fas fa-wifi"></i> IoT Integration</span>
           </div>
         </div>
@@ -472,7 +458,6 @@ const SkillHub = () => {
           onClick={() => setActiveTab('tree')}
         >
           <i className="fas fa-network-wired"></i> Skill Paths 
-          {/* Changed from project-diagram to network-wired, and text to Skill Paths */}
         </button>
       </div>
 
