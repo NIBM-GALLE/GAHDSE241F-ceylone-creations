@@ -1,11 +1,118 @@
+/* General Home Page Styles */
 .home-page {
     min-height: 100vh;
-    background-color: #f9fafb;
+    background-color: #f9fafb; /* Keeping light neutral background */
+    /* If your header is sticky and has a fixed height, you might need padding-top:
+    /* padding-top: 4rem; /* Example: adjust to your header's height */
   }
   
-  /* Hero Section */
+  /* --- SiteHeader Styles --- */
+  .site-header {
+    background-color: white;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    /* position: sticky; */ /* Uncomment if you want a sticky header */
+    /* top: 0; */
+    /* z-index: 1000; */
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .header-container {
+    max-width: 80rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #8B4513; /* Primary brown from your theme */
+    text-decoration: none;
+  }
+  
+  .logo-accent {
+    color: #A0522D; /* Lighter accent brown */
+  }
+  
+  .main-nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #4b5563; /* Dark grey for text */
+    font-weight: 500;
+    transition: color 0.3s;
+    padding: 0.25rem 0;
+    position: relative;
+  }
+  
+  .nav-link:hover {
+    color: #8B4513; /* Primary brown on hover */
+  }
+  
+  .nav-link.active {
+    color: #8B4513; /* Primary brown for active link */
+    font-weight: 600;
+  }
+  
+  .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #8B4513;
+  }
+  
+  .auth-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .auth-links .nav-link:hover {
+     color: #8B4513;
+  }
+  
+  .header-cta-button {
+    background-color: #8B4513;
+    color: white !important;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  
+  .header-cta-button:hover {
+    background-color: #5C2E00;
+    color: white !important;
+  }
+  
+  @media (max-width: 768px) {
+    .main-nav {
+      display: none;
+    }
+    .auth-links .nav-link {
+      display: none;
+    }
+    .auth-links .header-cta-button {
+      display: inline-block;
+    }
+    .header-container {
+      justify-content: space-between;
+    }
+  }
+  
+  /* --- Hero Section --- */
   .hero-section {
-    background: linear-gradient(to right, #f59e0b, #d97706);
+    background: linear-gradient(to right, #A0522D, #8B4513);
     color: white;
     padding: 5rem 1rem;
     text-align: center;
@@ -45,10 +152,11 @@
   
   .primary-button {
     background-color: white;
-    color: #d97706;
+    color: #8B4513;
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
     font-weight: 500;
+    text-decoration: none;
     transition: background-color 0.3s;
   }
   
@@ -59,18 +167,20 @@
   .secondary-button {
     background-color: transparent;
     border: 2px solid white;
+    color: white;
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
     font-weight: 500;
+    text-decoration: none;
     transition: all 0.3s;
   }
   
   .secondary-button:hover {
     background-color: white;
-    color: #d97706;
+    color: #8B4513;
   }
   
-  /* Categories Section */
+  /* --- Categories Section --- */
   .categories-section {
     padding: 4rem 1rem;
     max-width: 72rem;
@@ -82,6 +192,7 @@
     font-weight: 700;
     margin-bottom: 2.5rem;
     text-align: center;
+    /* color: #5C2E00; */
   }
   
   .categories-grid {
@@ -101,31 +212,37 @@
     padding: 1.5rem;
     border-radius: 0.75rem;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s, transform 0.3s;
     text-align: center;
+    text-decoration: none;
+    color: inherit;
   }
   
   .category-card:hover {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
   }
   
   .category-icon {
     font-size: 2.25rem;
     margin-bottom: 0.75rem;
     display: block;
+    color: #8B4513;
   }
   
   .category-card h3 {
     font-weight: 600;
     font-size: 1.125rem;
     margin-bottom: 0.25rem;
+    color: #374151;
   }
   
   .category-card p {
     color: #6b7280;
+    font-size: 0.9rem;
   }
   
-  /* Popular Tutorials */
+  /* --- Popular Tutorials --- */
   .popular-tutorials {
     padding: 4rem 1rem;
     background-color: white;
@@ -142,15 +259,19 @@
   .section-header h2 {
     font-size: 1.875rem;
     font-weight: 700;
+    /* color: #5C2E00; */
   }
   
   .view-all {
-    color: #d97706;
-    transition: text-decoration 0.3s;
+    color: #8B4513;
+    font-weight: 500;
+    text-decoration: none;
+    transition: text-decoration 0.3s, color 0.3s;
   }
   
   .view-all:hover {
     text-decoration: underline;
+    color: #5C2E00;
   }
   
   .tutorials-grid {
@@ -167,15 +288,23 @@
     }
   }
   
+  @media (min-width: 1024px) {
+    .tutorials-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
   .tutorial-card {
     border: 1px solid #e5e7eb;
     border-radius: 0.75rem;
     overflow: hidden;
-    transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s, transform 0.3s;
+    background-color: white;
   }
   
   .tutorial-card:hover {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transform: translateY(-5px);
   }
   
   .tutorial-image {
@@ -191,6 +320,7 @@
     align-items: center;
     justify-content: center;
     color: #9ca3af;
+    font-size: 0.9rem;
   }
   
   .tutorial-content {
@@ -207,46 +337,76 @@
   .tutorial-header h3 {
     font-weight: 700;
     font-size: 1.25rem;
+    color: #374151;
+    margin-right: 0.5rem;
   }
   
   .difficulty-badge {
     font-size: 0.75rem;
-    padding: 0.25rem 0.5rem;
+    padding: 0.25rem 0.6rem;
     border-radius: 9999px;
+    font-weight: 500;
+    white-space: nowrap;
   }
   
   .difficulty-badge.beginner {
-    background-color: #fef3c7;
-    color: #92400e;
+    background-color: #F5EADD;
+    color: #5C2E00;
   }
   
   .difficulty-badge.intermediate {
-    background-color: #dbeafe;
-    color: #1e40af;
+    background-color: #D2B48C;
+    color: #4A2500;
   }
   
   .author {
     color: #6b7280;
     margin-bottom: 1rem;
+    font-size: 0.9rem;
   }
   
   .tutorial-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #f3f4f6;
   }
   
+  /* Star Rating Styles */
   .rating {
     display: flex;
     align-items: center;
   }
   
-  .star {
-    color: #f59e0b;
-    margin-right: 0.25rem;
+  .rating .star { /* General star style */
+    margin-right: 0.1rem;
+    font-size: 1.1em;
+    line-height: 1;
   }
   
-  /* CTA Section */
+  .rating .star.filled {
+    color: #A0522D; /* Lighter accent brown for filled stars */
+  }
+  
+  .rating .star.empty {
+    color: #ccc; /* Neutral light grey for empty stars */
+  }
+  
+  .rating .rating-text {
+    margin-left: 0.4rem;
+    font-size: 0.9em;
+    color: #6b7280;
+    vertical-align: middle;
+  }
+  
+  .tutorial-footer .duration-text {
+    font-size: 0.9em;
+    color: #6b7280;
+  }
+  
+  /* --- CTA Section --- */
   .cta-section {
     padding: 5rem 1rem;
     background-color: #f3f4f6;
@@ -257,6 +417,7 @@
     font-size: 1.875rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
+    /* color: #5C2E00; */
   }
   
   .cta-section p {
@@ -265,18 +426,99 @@
     max-width: 56rem;
     margin-left: auto;
     margin-right: auto;
+    color: #4b5563;
   }
   
   .cta-button {
     display: inline-block;
-    background-color: #d97706;
+    background-color: #8B4513;
     color: white;
     padding: 0.75rem 2rem;
     border-radius: 0.5rem;
     font-weight: 500;
+    text-decoration: none;
     transition: background-color 0.3s;
   }
   
   .cta-button:hover {
-    background-color: #b45309;
+    background-color: #5C2E00;
+  }
+  
+  /* --- SiteFooter Styles --- */
+  .site-footer {
+    background-color: #5C2E00;
+    color: #e5e7eb;
+    padding: 3rem 1rem 1.5rem;
+  }
+  
+  .footer-container {
+    max-width: 80rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  .footer-section h4 {
+    color: white;
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  
+  .footer-section a {
+    display: block;
+    color: #D2B48C;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s, padding-left 0.3s;
+  }
+  
+  .footer-section a:hover {
+    color: white;
+    padding-left: 5px;
+  }
+  
+  .footer-social-media {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .footer-social-media a {
+    color: #D2B48C;
+    text-decoration: none;
+    font-size: 1.25rem;
+    transition: color 0.3s, transform 0.3s;
+    padding: 0;
+  }
+  
+  .footer-social-media a:hover {
+    color: white;
+    transform: translateY(-2px);
+  }
+  
+  .footer-bottom {
+    border-top: 1px solid #A0522D;
+    padding-top: 1.5rem;
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  .copyright-text {
+    font-size: 0.875rem;
+    color: #D2B48C;
+  }
+  
+  @media (max-width: 768px) {
+    .footer-container {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem;
+    }
+    .footer-section {
+      text-align: left;
+    }
+    .footer-social-connect .footer-social-media { /* Assuming footer-social-connect is a class on the parent div */
+      justify-content: flex-start;
+    }
   }
