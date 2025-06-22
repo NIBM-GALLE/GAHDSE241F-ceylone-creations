@@ -4,7 +4,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import BuyersCrowdFunding from './pages/buyers/BuyersCrowdFunding';
 import ArtisantSubmitForm from './pages/artisants/ArtisantSubmitForm';
 import HomePage from './pages/elibrary/HomePage';
-import TutorialDetailPage from './pages/elibrary/TutorialDetailPage';    
+import TutorialDetailPage from './pages/elibrary/TutorialDetailPage';
+import TutorialsView from './pages/tutorials/TutorialsView';
+import CrowdFundingRequestForm from './pages/artisants/CrowdFundingRequestForm';  
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
           <Route path="/artisantsform" element={<ArtisantSubmitForm />} />
           <Route path="/elibrary"element={<HomePage />} />
           <Route path="/elibrary"element={<TutorialDetailPage />} />
+          <Route path="/tutorials" element={<TutorialsView />} />
+          <Route path="/requestform" element={<CrowdFundingRequestForm />} />
 
           
           </Routes>

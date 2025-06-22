@@ -1,0 +1,68 @@
+.form-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 50px auto;
+  background: #f5eee6; /* light brown */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(139, 69, 19, 0.08); /* brown shadow */
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  text-align: center;
+  color: #8B4513; /* dark brown */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin: 10px 0 5px;
+  font-weight: bold;
+  color: #6d4c2b; /* medium brown */
+}
+
+input, textarea, select {
+  padding: 10px;
+  border: 1px solid #bfa181; /* light brown border */
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  background: #fdf6f0; /* very light brown */
+  color: #4e342e; /* dark brown text */
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-family: 'Fira Mono', 'Consolas', 'Courier New', monospace;
+  color: #8B7B6A;
+  font-size: 1rem;
+  opacity: 1;
+}
+
+input[type="file"] {
+  background: #fff;
+}
+
+button {
+  padding: 12px;
+  background-color: #8B4513; /* dark brown */
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #6d4c2b; /* slightly darker brown */
+}
+
+ul {
+  color: #4e342e;
+}
